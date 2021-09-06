@@ -59,6 +59,22 @@ function App() {
     document.querySelector("#num").value = "";
   };
 
+  const Divide = (e) => {
+    e.preventDefault();
+    if (clear) {
+      setClear(false);
+    }
+
+    let currentNum = document.querySelector("#num").value;
+    if (currentNum == "") {
+      return;
+    }
+
+    let sum = currentSum / parseInt(currentNum);
+    setCurrentSum(sum);
+    document.querySelector("#num").value = "";
+  };
+
   const Clear = (e) => {
     e.preventDefault();
     console.log("sum: ", currentSum);
@@ -79,6 +95,7 @@ function App() {
         <button onClick={Add}>Add</button>
         <button onClick={Subtract}>Subtract</button>
         <button onClick={Multiply}>Multiply</button>
+        <button onClick={Divide}>Divide</button>
         <button onClick={Clear}>Clear</button>
       </form>
     </div>
