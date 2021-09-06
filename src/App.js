@@ -22,7 +22,7 @@ function App() {
     if (currentNum == "") {
       return;
     }
-    let sum = currentSum + parseInt(currentNum);
+    let sum = currentSum + parseFloat(currentNum);
     setCurrentSum(sum);
     document.querySelector("#num").value = "";
   };
@@ -38,7 +38,7 @@ function App() {
       return;
     }
 
-    let sum = currentSum - parseInt(currentNum);
+    let sum = currentSum - parseFloat(currentNum);
     setCurrentSum(sum);
     document.querySelector("#num").value = "";
   };
@@ -54,7 +54,7 @@ function App() {
       return;
     }
 
-    let sum = currentSum * parseInt(currentNum);
+    let sum = currentSum * parseFloat(currentNum);
     setCurrentSum(sum);
     document.querySelector("#num").value = "";
   };
@@ -70,7 +70,7 @@ function App() {
       return;
     }
 
-    let sum = currentSum / parseInt(currentNum);
+    let sum = currentSum / parseFloat(currentNum);
     setCurrentSum(sum);
     document.querySelector("#num").value = "";
   };
