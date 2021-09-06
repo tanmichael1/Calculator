@@ -27,6 +27,22 @@ function App() {
     document.querySelector("#num").value = "";
   };
 
+  const Subtract = (e) => {
+    e.preventDefault();
+    if (clear) {
+      setClear(false);
+    }
+
+    let currentNum = document.querySelector("#num").value;
+    if (currentNum == "") {
+      return;
+    }
+
+    let sum = currentSum - parseInt(currentNum);
+    setCurrentSum(sum);
+    document.querySelector("#num").value = "";
+  };
+
   const Clear = (e) => {
     e.preventDefault();
     console.log("sum: ", currentSum);
@@ -45,6 +61,7 @@ function App() {
         <input type="text" id="result" value={currentSum} readOnly />
         <input type="text" id="num" placeholder="enter a number" />
         <button onClick={Add}>Add</button>
+        <button onClick={Subtract}>Subtract</button>
         <button onClick={Clear}>Clear</button>
       </form>
     </div>
