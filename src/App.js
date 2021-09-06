@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import React, { useState, useEffect } from "react";
+import Calculator from "./components/calculator";
 
 function App() {
   const [currentSum, setCurrentSum] = useState(0);
@@ -98,6 +99,10 @@ function App() {
         <button onClick={Divide}>Divide</button>
         <button onClick={Clear}>Clear</button>
       </form>
+      <div className="app-title">
+        <h1> Visual Calculator</h1>
+      </div>
+      <Calculator />
     </div>
   );
 }
