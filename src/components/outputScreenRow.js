@@ -3,10 +3,10 @@ import React from "react";
 
 // Functional Component.
 // Used to show Question/Answer.
-const OutputScreenRow = () => {
+const OutputScreenRow = (props) => {
   return (
     <div className="screen-row">
-      <input type="text" readOnly />
+      <input type="text" readOnly value={props.value} />
     </div>
   );
 };
