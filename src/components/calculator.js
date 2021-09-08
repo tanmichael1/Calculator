@@ -69,7 +69,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <div className="frame">
-        <CalculatorTitle value="GeeksforGeeks Calculator" />
+        <CalculatorTitle value="Visual Calculator" />
         <div className="mainCalc">
           <OutputScreen
             question={this.state.question}
