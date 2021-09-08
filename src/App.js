@@ -95,7 +95,7 @@ function App() {
     console.log(value);
 
     switch (value) {
-      case "+" || "-" || "-" || "-": {
+      case "+": {
         console.log("not yet");
         break;
       }
@@ -104,6 +104,22 @@ function App() {
         console.log("not yet");
         break;
       }
+
+      case "*": {
+        console.log("not yet");
+        break;
+      }
+
+      case "x": {
+        console.log("not yet");
+        break;
+      }
+
+      case "/": {
+        console.log("not yet");
+        break;
+      }
+
       case "=": {
         // if it's an equal sign, use the eval module
         // to evaluate the question ,convert the answer
@@ -144,24 +160,6 @@ function App() {
         break;
       }
     }
-
-    // if (clear) {
-    //   setClear(false);
-    // }
-    // let currentNum = document.querySelector("#num2").value;
-    // if (currentNum == "") {
-    //   return;
-    // }
-    // let sum = currentSum + parseFloat(currentNum);
-    // setCurrentSum(sum);
-    // document.querySelector("#num2").value = "";
-
-    // handleClick(event) {
-    //   // get the value from the target element (button)
-    //   const value = event.target.value;
-    //   console.log(value);
-
-    // }
   };
 
   return (
@@ -171,22 +169,40 @@ function App() {
         <h1> Basic Form Calculator</h1>
       </div>
       <form>
-        <input type="text" id="result" value={currentSum} readOnly />
+        <label>Enter a number </label> <br />
         <input type="text" id="num" placeholder="enter a number" />
-        <button onClick={Add}>Add</button>
-        <button onClick={Subtract}>Subtract</button>
-        <button onClick={Multiply}>Multiply</button>
-        <button onClick={Divide}>Divide</button>
-        <button onClick={Clear}>Clear</button>
+        <br />
+        <br />
+        <button className="btn btn-success" onClick={Add}>
+          Add
+        </button>
+        <button className="btn btn-success" onClick={Subtract}>
+          Subtract
+        </button>
+        <button className="btn btn-success" onClick={Multiply}>
+          Multiply
+        </button>
+        <button className="btn btn-success" onClick={Divide}>
+          Divide
+        </button>
+        <button className="btn btn-light" onClick={Clear}>
+          Clear
+        </button>
+        <br />
+        <br />
+        <label>Results </label> <br />
+        <input type="text" id="result" value={currentSum} readOnly />
+        <br />
       </form>
-      <div className="app-title">
-        <h1> Visual Calculator</h1>
-      </div>
+      <br />
+      <hr />
       <Calculator />
+      <br /> <hr />
       <h1>Equations Calculator </h1>
       <form>
         <input type="text" id="num2" placeholder="enter an equation" />
-        <button onClick={Add2}>Add</button>
+        <br />
+        <button onClick={Add2}>Equal</button> <br />
         <input type="text" id="finalAnswer" readOnly />
       </form>
     </div>
