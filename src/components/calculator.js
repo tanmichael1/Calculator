@@ -12,6 +12,7 @@ class Calculator extends React.Component {
     this.state = {
       question: "",
       answer: "",
+      answered: false,
     };
 
     // Bind our handleClick method (sets 'this' explicitly
@@ -34,20 +35,23 @@ class Calculator extends React.Component {
           var ans = "";
           try {
             ans = eval(this.state.question);
+
             console.log(ans);
           } catch (err) {
             this.setState({ answer: "Math Error" });
           }
-          if (ans === undefined) this.setState({ answer: "Math Error" });
+          if (ans === undefined) {
+            this.setState({ answer: "Math Error" });
+          }
           // update answer in our state.
-          else this.setState({ answer: ans });
+          else this.setState({ answer: ans, answered: true });
           break;
         }
       }
       case "Clear": {
         // if it's the Clears sign, just clean our
         // question and answer in the state
-        this.setState({ question: "", answer: "" });
+        this.setState({ question: "", answer: "", answered: false });
         break;
       }
 
@@ -60,7 +64,17 @@ class Calculator extends React.Component {
 
       default: {
         // for every other command, update the answer in the state
-        this.setState({ question: (this.state.question += value) });
+        console.log(this.state.answered);
+        var currAns = this.state.answer;
+
+        if (this.state.answered) {
+          console.log("Here " + this.state.answer);
+          this.setState({ answered: false });
+          this.setState({ question: (currAns += value) });
+        } else {
+          this.setState({ question: (this.state.question += value) });
+        }
+
         break;
       }
     }
@@ -74,6 +88,7 @@ class Calculator extends React.Component {
           <OutputScreen
             question={this.state.question}
             answer={this.state.answer}
+            answered={this.state.answered}
           />
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"Clear"} />
