@@ -39,7 +39,8 @@ class Calculator extends React.Component {
             currQuestion = this.state.question.replace("x", "*");
             currQuestion = currQuestion.replace("÷", "/");
             console.log("current question " + currQuestion);
-            ans = eval(currQuestion);
+            ans = Function('"use strict";return (' + currQuestion + ")")();
+            // ans = eval(currQuestion);
 
             console.log("Here: " + ans);
           } catch (err) {
