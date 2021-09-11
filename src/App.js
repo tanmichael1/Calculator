@@ -7,7 +7,7 @@ function App() {
   const [clear, setClear] = useState(false);
 
   useEffect(() => {
-    document.querySelector("#result").value = "";
+    document.querySelector("#result").value = 0;
   }, []);
 
   useEffect(() => {
@@ -124,19 +124,22 @@ function App() {
         // if it's an equal sign, use the eval module
         // to evaluate the question ,convert the answer
         // (in number) to String
-        if (this.state.question !== "") {
+        if (document.getElementById("num2").value !== "") {
           var ans = "";
           try {
-            ans = eval(this.state.question);
+            console.log(document.getElementById("num2").value);
+            ans = eval(document.getElementById("num2").value.replace("=", ""));
             console.log(ans);
             document.querySelector("#finalAnswer");
           } catch (err) {
-            this.setState({ answer: "Math Error" });
+            alert("Maths error");
           }
-          if (ans === undefined) this.setState({ answer: "Math Error" });
+          if (ans === undefined) alert("Maths error");
           // update answer in our state.
-          else this.setState({ answer: ans, question: "" });
-          break;
+          else {
+            document.getElementById("finalAnswer").value = ans;
+            break;
+          }
         }
       }
       case "Clear": {
