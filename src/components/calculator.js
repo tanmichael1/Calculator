@@ -23,7 +23,8 @@ class Calculator extends React.Component {
   // our method to handle all click events from our buttons
   handleClick(event) {
     // get the value from the target element (button)
-    const value = event.target.value;
+    var checkValue = event.target.value;
+    const value = checkValue;
     console.log(value);
 
     switch (value) {
@@ -34,9 +35,13 @@ class Calculator extends React.Component {
         if (this.state.question !== "") {
           var ans = "";
           try {
-            ans = eval(this.state.question);
+            var currQuestion = this.state.question;
+            currQuestion = this.state.question.replace("x", "*");
+            currQuestion = currQuestion.replace("÷", "/");
+            console.log("current question " + currQuestion);
+            ans = eval(currQuestion);
 
-            console.log(ans);
+            console.log("Here: " + ans);
           } catch (err) {
             this.setState({ answer: "Math Error" });
           }
@@ -94,13 +99,13 @@ class Calculator extends React.Component {
             <Button handleClick={this.handleClick} label={"Clear"} />
             <Button handleClick={this.handleClick} label={"Delete"} />
             <Button handleClick={this.handleClick} label={"."} />
-            <Button handleClick={this.handleClick} label={"/"} />
+            <Button handleClick={this.handleClick} label={"÷"} />
           </div>
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"7"} />
             <Button handleClick={this.handleClick} label={"8"} />
             <Button handleClick={this.handleClick} label={"9"} />
-            <Button handleClick={this.handleClick} label={"*"} />
+            <Button handleClick={this.handleClick} label={"x"} />
           </div>
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"4"} />
