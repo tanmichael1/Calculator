@@ -142,23 +142,25 @@ function App() {
           }
         }
       }
-      case "Clear": {
-        // if it's the Clears sign, just clean our
-        // question and answer in the state
-        this.setState({ question: "", answer: "" });
-        break;
-      }
-
-      case "Delete": {
-        var str = this.state.question;
-        str = str.substr(0, str.length - 1);
-        this.setState({ question: str });
-        break;
-      }
 
       default: {
         // for every other command, update the answer in the state
-        document.querySelector("#finalAnswer").value = array[0];
+        //document.querySelector("#finalAnswer").value = array[0];
+        if (document.getElementById("num2").value !== "") {
+          var ans = "";
+          try {
+            ans = eval(document.getElementById("num2").value.replace("=", ""));
+            console.log(ans);
+          } catch (err) {
+            alert("Maths error");
+          }
+          if (ans === undefined) alert("Maths error");
+          // update answer in our state.
+          else {
+            document.getElementById("finalAnswer").value = ans;
+            break;
+          }
+        }
 
         break;
       }
