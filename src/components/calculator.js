@@ -122,6 +122,8 @@ class Calculator extends React.Component {
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"0"} />
             <Button handleClick={this.handleClick} label={"="} />
+            <Button handleClick={this.handleClick} label={"("} />
+            <Button handleClick={this.handleClick} label={")"} />
           </div>
         </div>
       </div>
