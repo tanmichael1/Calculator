@@ -4,7 +4,7 @@ import CalculatorTitle from "./calculatorTitle.js";
 import OutputScreen from "./outputScreen.js";
 import Button from "./button.js";
 
-class Calculator extends React.Component {
+class VisualCalculator extends React.Component {
   constructor() {
     super();
 
@@ -137,4 +137,4 @@ class Calculator extends React.Component {
 }
 
 // Export Calculator Component.
-export default Calculator;
+export default VisualCalculator;
