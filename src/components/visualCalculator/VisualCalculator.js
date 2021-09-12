@@ -101,34 +101,35 @@ class VisualCalculator extends React.Component {
             answered={this.state.answered}
           />
           <div className="button-row">
+            <Button handleClick={this.handleClick} label={"("} />
+            <Button handleClick={this.handleClick} label={")"} />
             <Button handleClick={this.handleClick} label={"Clear"} />
             <Button handleClick={this.handleClick} label={"Delete"} />
-            <Button handleClick={this.handleClick} label={"."} />
-            <Button handleClick={this.handleClick} label={"÷"} />
           </div>
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"7"} />
             <Button handleClick={this.handleClick} label={"8"} />
             <Button handleClick={this.handleClick} label={"9"} />
-            <Button handleClick={this.handleClick} label={"x"} />
+            <Button handleClick={this.handleClick} label={"÷"} />
           </div>
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"4"} />
             <Button handleClick={this.handleClick} label={"5"} />
             <Button handleClick={this.handleClick} label={"6"} />
-            <Button handleClick={this.handleClick} label={"-"} />
+
+            <Button handleClick={this.handleClick} label={"x"} />
           </div>
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"1"} />
             <Button handleClick={this.handleClick} label={"2"} />
             <Button handleClick={this.handleClick} label={"3"} />
-            <Button handleClick={this.handleClick} label={"+"} />
+            <Button handleClick={this.handleClick} label={"-"} />
           </div>
           <div className="button-row">
             <Button handleClick={this.handleClick} label={"0"} />
+            <Button handleClick={this.handleClick} label={"."} />
             <Button handleClick={this.handleClick} label={"="} />
-            <Button handleClick={this.handleClick} label={"("} />
-            <Button handleClick={this.handleClick} label={")"} />
+            <Button handleClick={this.handleClick} label={"+"} />
           </div>
         </div>
       </div>
