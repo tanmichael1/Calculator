@@ -90,6 +90,10 @@ class Calculator extends React.Component {
     return (
       <div className="frame">
         <CalculatorTitle value="Visual Calculator" />
+        <p>
+          Press on the calculator buttons to create an equation before pressing
+          the equals button.
+        </p>
         <div className="mainCalc">
           <OutputScreen
             question={this.state.question}

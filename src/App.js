@@ -173,6 +173,10 @@ function App() {
       <div className="app-title">
         <h1> Basic Form Calculator</h1>
       </div>
+      <p>
+        Enter a number in the box below and press any of the buttons to apply
+        that value to the current values in the results box.
+      </p>
       <form>
         <label>Enter a number </label> <br />
         <input type="text" id="num" placeholder="enter a number" />
@@ -204,10 +208,14 @@ function App() {
       <Calculator />
       <br /> <hr />
       <h1>Equations Calculator </h1>
+      <p>Enter a basic equation (e.g. 1+1) before pressing the Equal button</p>
       <form>
         <input type="text" id="num2" placeholder="enter an equation" />
         <br />
+        <br />
         <button onClick={Add2}>Equal</button> <br />
+        <label>Results</label>
+        <br />
         <input type="text" id="finalAnswer" readOnly />
       </form>
     </div>
