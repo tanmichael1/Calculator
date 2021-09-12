@@ -1,7 +1,7 @@
 // Imports.
 import React from "react";
 
-const Add2 = (e) => {
+const Equal = (e) => {
   e.preventDefault();
 
   const equation = document.querySelector("#num2").value;
@@ -94,10 +94,15 @@ class EquationsCalculator extends React.Component {
           Enter a basic equation (e.g. 1+1) before pressing the Equal button
         </p>
         <form>
-          <input type="text" id="num2" placeholder="enter an equation" />
+          <label>Your equation</label>
+          <br />
+          <input type="text" id="num2" />
           <br />
           <br />
-          <button onClick={Add2}>Equal</button> <br />
+          <button className="btn btn-success" onClick={Equal}>
+            Equal
+          </button>{" "}
+          <br />
           <label>Results</label>
           <br />
           <input type="text" id="finalAnswer" readOnly />

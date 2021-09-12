@@ -95,7 +95,7 @@ function BasicFormCalculator() {
       </p>
       <form>
         <label>Enter a number </label> <br />
-        <input type="text" id="num" placeholder="enter a number" />
+        <input type="text" id="num" />
         <br />
         <br />
         <button className="btn btn-success" onClick={Add}>
@@ -110,7 +110,7 @@ function BasicFormCalculator() {
         <button className="btn btn-success" onClick={Divide}>
           Divide
         </button>
-        <button className="btn btn-light" onClick={Clear}>
+        <button className="btn btn-outline-success" onClick={Clear}>
           Clear
         </button>
         <br />
