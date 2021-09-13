@@ -14,7 +14,7 @@ function BasicFormCalculator() {
     if (clear) document.querySelector("#result").value = "";
   });
 
-  const Add = (e) => {
+  function addEffect(e, value) {
     e.preventDefault();
     if (clear) {
       setClear(false);
@@ -23,58 +23,19 @@ function BasicFormCalculator() {
     if (currentNum == "") {
       return;
     }
+
     let sum = currentSum + parseFloat(currentNum);
+    console.log(currentSum + value + parseFloat(currentNum));
+    sum = Function(
+      '"use strict";return (' +
+        currentSum +
+        value +
+        parseFloat(currentNum) +
+        ")"
+    )();
     setCurrentSum(sum);
     document.querySelector("#num").value = "";
-  };
-
-  const Subtract = (e) => {
-    e.preventDefault();
-    if (clear) {
-      setClear(false);
-    }
-
-    let currentNum = document.querySelector("#num").value;
-    if (currentNum == "") {
-      return;
-    }
-
-    let sum = currentSum - parseFloat(currentNum);
-    setCurrentSum(sum);
-    document.querySelector("#num").value = "";
-  };
-
-  const Multiply = (e) => {
-    e.preventDefault();
-    if (clear) {
-      setClear(false);
-    }
-
-    let currentNum = document.querySelector("#num").value;
-    if (currentNum == "") {
-      return;
-    }
-
-    let sum = currentSum * parseFloat(currentNum);
-    setCurrentSum(sum);
-    document.querySelector("#num").value = "";
-  };
-
-  const Divide = (e) => {
-    e.preventDefault();
-    if (clear) {
-      setClear(false);
-    }
-
-    let currentNum = document.querySelector("#num").value;
-    if (currentNum == "") {
-      return;
-    }
-
-    let sum = currentSum / parseFloat(currentNum);
-    setCurrentSum(sum);
-    document.querySelector("#num").value = "";
-  };
+  }
 
   const Clear = (e) => {
     e.preventDefault();
@@ -94,16 +55,16 @@ function BasicFormCalculator() {
       <form>
         <label>Enter a number </label> <br />
         <input type="text" id="num" /> <br />
-        <button className="btn btn-success" onClick={Add}>
+        <button className="btn btn-success" onClick={(e) => addEffect(e, "+")}>
           Add
         </button>
-        <button className="btn btn-success" onClick={Subtract}>
+        <button className="btn btn-success" onClick={(e) => addEffect(e, "-")}>
           Subtract
         </button>
-        <button className="btn btn-success" onClick={Multiply}>
+        <button className="btn btn-success" onClick={(e) => addEffect(e, "*")}>
           Multiply
         </button>
-        <button className="btn btn-success" onClick={Divide}>
+        <button className="btn btn-success" onClick={(e) => addEffect(e, "/")}>
           Divide
         </button>
         <button className="btn btn-outline-success" onClick={Clear}>

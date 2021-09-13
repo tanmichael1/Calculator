@@ -9,52 +9,27 @@ const Equal = (e) => {
   var arrayLength = array.length;
   var value = array[array.length - 1];
 
-  console.log(value);
-
   switch (value) {
-    case "+": {
-      console.log("not yet");
-      break;
-    }
-
-    case "-": {
-      console.log("not yet");
-      break;
-    }
-
-    case "*": {
-      console.log("not yet");
-      break;
-    }
-
-    case "x": {
-      console.log("not yet");
-      break;
-    }
-
+    case "+":
+    case "-":
+    case "*":
+    case "x":
     case "/": {
-      console.log("not yet");
+      console.log("Incorrect");
       break;
     }
 
     case "=": {
-      // if it's an equal sign, use the eval module
-      // to evaluate the question ,convert the answer
-      // (in number) to String
-      if (document.getElementById("equation").value !== "") {
+      if (equation !== "") {
         var ans = "";
         try {
-          console.log(document.getElementById("equation").value);
-          ans = eval(
-            document.getElementById("equation").value.replace("=", "")
-          );
-          console.log(ans);
-          document.querySelector("#finalAnswer");
+          ans = Function(
+            '"use strict";return (' + equation.replace("=", "") + ")"
+          )();
         } catch (err) {
-          alert("Maths error");
+          alert(err);
         }
-        if (ans === undefined) alert("Maths error");
-        // update answer in our state.
+        if (ans === undefined) alert("Answer is undefined");
         else {
           document.getElementById("finalAnswer").value = ans;
           break;
@@ -63,33 +38,26 @@ const Equal = (e) => {
     }
 
     default: {
-      // for every other command, update the answer in the state
-      //document.querySelector("#finalAnswer").value = array[0];
-      if (document.getElementById("equation").value !== "") {
+      if (equation !== "") {
         var ans = "";
         try {
-          ans = eval(
-            document.getElementById("equation").value.replace("=", "")
-          );
-          console.log(ans);
+          ans = Function(
+            '"use strict";return (' + equation.replace("=", "") + ")"
+          )();
         } catch (err) {
-          alert("Maths error");
+          alert(err);
         }
-        if (ans === undefined) alert("Maths error");
-        // update answer in our state.
+        if (ans === undefined) alert("Answer is undefined");
         else {
           document.getElementById("finalAnswer").value = ans;
           break;
         }
       }
-
       break;
     }
   }
 };
 class EquationsCalculator extends React.Component {
-  // our method to handle all click events from our buttons
-
   render() {
     return (
       <div>
@@ -115,5 +83,4 @@ class EquationsCalculator extends React.Component {
   }
 }
 
-// Export Calculator Component.
 export default EquationsCalculator;
