@@ -20,7 +20,43 @@ code {
   font-size: 110%;
 }
 
-/* Calculator title */
+input[type="text"] {
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* Headers and footers */
+
+.header {
+  position: center;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding-top: 3vh;
+  padding-bottom: 6vh;
+  bottom: 0;
+  height: 2.5rem;
+  background-color: #266333;
+}
+
+.footer {
+  position: center;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding-top: 3vh;
+  padding-bottom: 6vh;
+  margin: -10px auto -100px auto;
+  bottom: 0;
+  height: 2.5rem;
+  background-color: #266333;
+}
+
+/* Calculator titles */
 
 .calculator-title {
   font-size: 30px;
@@ -34,6 +70,8 @@ code {
   border: 2px solid black;
   color: #4caf50;
 }
+
+/* Visual Calculator */
 
 .mainCalc {
   margin: 0px;
@@ -69,29 +107,4 @@ input[type="button"]:active {
   color: #222;
   padding: 10px;
   text-align: right;
-}
-
-.header {
-  position: center;
-  color: white;
-  text-align: center;
-  width: 100%;
-  padding-top: 3vh;
-  padding-bottom: 6vh;
-  bottom: 0;
-  height: 2.5rem;
-  background-color: #266333;
-}
-
-.footer {
-  position: center;
-  color: white;
-  text-align: center;
-  width: 100%;
-  padding-top: 3vh;
-  padding-bottom: 6vh;
-  margin: -10px auto -100px auto;
-  bottom: 0;
-  height: 2.5rem;
-  background-color: #266333;
 }

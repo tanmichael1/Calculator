@@ -93,9 +93,7 @@ function BasicFormCalculator() {
       </p>
       <form>
         <label>Enter a number </label> <br />
-        <input type="text" id="num" />
-        <br />
-        <br />
+        <input type="text" id="num" /> <br />
         <button className="btn btn-success" onClick={Add}>
           Add
         </button>
@@ -111,7 +109,6 @@ function BasicFormCalculator() {
         <button className="btn btn-outline-success" onClick={Clear}>
           Clear
         </button>
-        <br />
         <br />
         <label>Results </label> <br />
         <input type="text" id="result" value={currentSum} readOnly />
