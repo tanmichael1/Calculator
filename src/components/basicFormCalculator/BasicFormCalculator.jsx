@@ -86,9 +86,7 @@ function BasicFormCalculator() {
 
   return (
     <div>
-      <div className="app-title">
-        <h1> Basic Form Calculator</h1>
-      </div>
+      <div className="calculator-title">Basic Form Calculator</div>
       <p>
         Enter a number in the box below and press any of the buttons to apply
         that value to the current values in the results box.

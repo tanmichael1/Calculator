@@ -1,6 +1,5 @@
 // Imports.
 import React from "react";
-import CalculatorTitle from "./calculatorTitle.js";
 import OutputScreen from "./outputScreen.js";
 import Button from "./button.js";
 
@@ -89,7 +88,7 @@ class VisualCalculator extends React.Component {
   render() {
     return (
       <div className="frame">
-        <CalculatorTitle value="Visual Calculator" />
+        <div className="calculator-title">Visual Calculator</div>
         <p>
           Press on the calculator buttons to create an equation before pressing
           the equals button.

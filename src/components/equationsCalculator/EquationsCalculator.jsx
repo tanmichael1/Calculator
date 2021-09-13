@@ -89,7 +89,7 @@ class EquationsCalculator extends React.Component {
   render() {
     return (
       <div>
-        <h1>Equations Calculator </h1>
+        <div className="calculator-title">Equations Calculator</div>
         <p>
           Enter a basic equation (e.g. 1+1) before pressing the Equal button
         </p>
