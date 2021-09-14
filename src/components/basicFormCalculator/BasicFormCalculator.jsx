@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 
 function BasicFormCalculator() {
-  // our method to handle all click events from our buttons
   const [currentSum, setCurrentSum] = useState(0);
   const [clear, setClear] = useState(false);
 
@@ -19,13 +18,12 @@ function BasicFormCalculator() {
     if (clear) {
       setClear(false);
     }
-    let currentNum = document.querySelector("#num").value;
+    let currentNum = document.querySelector("#newNum").value;
     if (currentNum == "") {
       return;
     }
 
     let sum = currentSum + parseFloat(currentNum);
-    console.log(currentSum + value + parseFloat(currentNum));
     sum = Function(
       '"use strict";return (' +
         currentSum +
@@ -34,7 +32,7 @@ function BasicFormCalculator() {
         ")"
     )();
     setCurrentSum(sum);
-    document.querySelector("#num").value = "";
+    document.querySelector("#newNum").value = "";
   }
 
   const Clear = (e) => {
@@ -54,7 +52,7 @@ function BasicFormCalculator() {
       </p>
       <form>
         <label>Enter a number </label> <br />
-        <input type="text" id="num" /> <br />
+        <input type="text" id="newNum" /> <br />
         <button className="btn btn-success" onClick={(e) => addEffect(e, "+")}>
           Add
         </button>

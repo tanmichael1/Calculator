@@ -6,7 +6,6 @@ const Equal = (e) => {
 
   const equation = document.querySelector("#equation").value;
   var array = equation.split("");
-  var arrayLength = array.length;
   var value = array[array.length - 1];
 
   switch (value) {
@@ -19,24 +18,7 @@ const Equal = (e) => {
       break;
     }
 
-    case "=": {
-      if (equation !== "") {
-        var ans = "";
-        try {
-          ans = Function(
-            '"use strict";return (' + equation.replace("=", "") + ")"
-          )();
-        } catch (err) {
-          alert(err);
-        }
-        if (ans === undefined) alert("Answer is undefined");
-        else {
-          document.getElementById("finalAnswer").value = ans;
-          break;
-        }
-      }
-    }
-
+    case "=":
     default: {
       if (equation !== "") {
         var ans = "";
@@ -53,7 +35,6 @@ const Equal = (e) => {
           break;
         }
       }
-      break;
     }
   }
 };

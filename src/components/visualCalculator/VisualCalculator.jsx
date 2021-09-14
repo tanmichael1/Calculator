@@ -7,30 +7,22 @@ class VisualCalculator extends React.Component {
   constructor() {
     super();
 
-    // set our default state
+    // set default state
     this.state = {
       question: "",
       answer: "",
       answered: false,
     };
 
-    // Bind our handleClick method (sets 'this' explicitly
-    // to refer to this componenent) We did this because 'this'
-    // would refer to the source of the click events
     this.handleClick = this.handleClick.bind(this);
   }
-  // our method to handle all click events from our buttons
   handleClick(event) {
-    // get the value from the target element (button)
     var checkValue = event.target.value;
     const value = checkValue;
     console.log(value);
 
     switch (value) {
       case "=": {
-        // if it's an equal sign, use the eval module
-        // to evaluate the question ,convert the answer
-        // (in number) to String
         if (this.state.question !== "") {
           var ans = "";
           try {
@@ -39,23 +31,16 @@ class VisualCalculator extends React.Component {
             currQuestion = currQuestion.replace("÷", "/");
             console.log("current question " + currQuestion);
             ans = Function('"use strict";return (' + currQuestion + ")")();
-            // ans = eval(currQuestion);
-
-            console.log("Here: " + ans);
           } catch (err) {
             this.setState({ answer: "Math Error" });
           }
           if (ans === undefined) {
             this.setState({ answer: "Math Error" });
-          }
-          // update answer in our state.
-          else this.setState({ answer: ans, answered: true });
+          } else this.setState({ answer: ans, answered: true });
           break;
         }
       }
       case "Clear": {
-        // if it's the Clears sign, just clean our
-        // question and answer in the state
         this.setState({ question: "", answer: "", answered: false });
         break;
       }
@@ -68,7 +53,6 @@ class VisualCalculator extends React.Component {
       }
 
       default: {
-        // for every other command, update the answer in the state
         console.log(this.state.answered);
         var currAns = this.state.answer;
 
@@ -79,7 +63,6 @@ class VisualCalculator extends React.Component {
         } else {
           this.setState({ question: (this.state.question += value) });
         }
-
         break;
       }
     }
@@ -136,5 +119,5 @@ class VisualCalculator extends React.Component {
   }
 }
 
-// Export Calculator Component.
+// Export Calculator.
 export default VisualCalculator;
