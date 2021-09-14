@@ -19,7 +19,7 @@ function BasicFormCalculator() {
       setClear(false);
     }
     let currentNum = document.querySelector("#newNum").value;
-    if (currentNum == "") {
+    if (currentNum === "") {
       return;
     }
 

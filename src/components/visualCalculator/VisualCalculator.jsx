@@ -39,6 +39,7 @@ class VisualCalculator extends React.Component {
           } else this.setState({ answer: ans, answered: true });
           break;
         }
+        break;
       }
       case "Clear": {
         this.setState({ question: "", answer: "", answered: false });
